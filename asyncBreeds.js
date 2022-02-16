@@ -26,6 +26,7 @@ const breedDetailsFromFile = function (breed, returnDataFunc) {
     // CHANGE: Pass data into callback instead of returning it directly
     console.log("In readFile's Callback: it has the data.");
     if (!error) returnDataFunc(data);
+    else returnDataFunc(undefined);
   });
 };
 
@@ -36,3 +37,5 @@ const readDataFunc = (breed) => {
 
 // CHANGE 2: we're now passing two arguments into breedDetailsFromFile: breed string and a callback function
 breedDetailsFromFile("Bombay", readDataFunc);
+
+module.exports = breedDetailsFromFile;
